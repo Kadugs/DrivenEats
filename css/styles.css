@@ -25,7 +25,7 @@ strong {
 .topo {
     z-index: 1;
     position: fixed;
-    width: 100%;
+    width: 100vw;
     height: 92px;
     background: rgb(207, 43, 43);
     color: white;
@@ -101,7 +101,7 @@ img {
 /*------------------- BOTÃO CONFIRMAR PEDIDO  -------------------------*/
 
 .barra-confirmar {
-    width: 100%;
+    width: 100vw;
     height: 90px;
     position: fixed;
     right: 0;

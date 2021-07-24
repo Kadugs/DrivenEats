@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/styles.css">
-
+    <link rel="icon" href="assets/hamburguer-topo.svg">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
@@ -24,14 +25,14 @@
         <div>
             <h2>Primeiro, seu prato</h2>
             <ul class="opcoes opcoes-pratos">
-                <li onclick="selecionaPrato(1);">
+                <li onclick="selecionaPrato(this);">
                     <img src="/assets/moqueca.png">
                     <p><strong>Moqueca</strong></p>
                     <p class="descricao-pedido">peixe fresco, tomate, coentro, cebola...</p>
                     <p>R$ 11,50</p>
                     <ion-icon name="checkmark-circle" class="escondido"></ion-icon>
                 </li>
-                <li onclick="selecionaPrato(2);">
+                <li onclick="selecionaPrato(this);">
                     <img src="/assets/moqueca.png">
                     <p><strong>Moqueca</strong></p>
                     <p class="descricao-pedido">peixe fresco, tomate, coentro, cebola...</p>
@@ -39,7 +40,7 @@
                     <ion-icon name="checkmark-circle" class="escondido"></ion-icon>
 
                 </li> 
-                <li onclick ="selecionaPrato(3)";>
+                <li onclick ="selecionaPrato(this)";>
                     <img src="/assets/moqueca.png">
                     <p><strong>Moqueca</strong></p>
                     <p class="descricao-pedido">peixe fresco, tomate, coentro, cebola...</p>
@@ -55,21 +56,21 @@
         <div>
             <h2>Agora, sua bebida</h2>
             <ul class="opcoes opcoes-bebidas">
-                <li onclick="selecionaBebida(1);">
+                <li onclick="selecionaBebida(this);">
                     <img src="/assets/suco de laranja.jpg">
                     <p><strong>Suco de Laranja</strong></p>
                     <p class="descricao-pedido">copo de 400ml.</p>
                     <p>R$ 3,00</p>
                     <ion-icon name="checkmark-circle" class="escondido"></ion-icon>
                 </li> 
-                <li onclick="selecionaBebida(2);">
+                <li onclick="selecionaBebida(this);">
                     <img src="/assets/suco de laranja.jpg">
                     <p><strong>Suco de Laranja</strong></p>
                     <p class="descricao-pedido">copo de 400ml.</p>
                     <p>R$ 3,50</p>
                     <ion-icon name="checkmark-circle" class="escondido"></ion-icon>
                 </li> 
-                <li onclick="selecionaBebida(3);">
+                <li onclick="selecionaBebida(this);">
                     <img src="/assets/suco de laranja.jpg">
                     <p><strong>Suco de Laranja</strong></p>
                     <p class="descricao-pedido">copo de 400ml.</p>
@@ -83,21 +84,21 @@
         <div>
             <h2>Por fim, sua sobremesa</h2>
             <ul class="opcoes opcoes-sobremesas">
-                <li onclick="selecionaSobremesa(1);">
+                <li onclick="selecionaSobremesa(this);">
                     <img src="/assets/doce de banana.jpg">
                     <p><strong>Doce de Banana</strong></p>
                     <p class="descricao-pedido">Doce caseiro</p>
                     <p>R$ 1,00</p>
                     <ion-icon name="checkmark-circle" class="escondido"></ion-icon>
                 </li> 
-                <li onclick="selecionaSobremesa(2);">
+                <li onclick="selecionaSobremesa(this);">
                     <img src="/assets/doce de banana.jpg">
                     <p><strong>Doce de Banana</strong></p>
                     <p class="descricao-pedido">Doce caseiro</p>
                     <p>R$ 2,50</p>
                     <ion-icon name="checkmark-circle" class="escondido"></ion-icon>
                 </li> 
-                <li onclick="selecionaSobremesa(3);">
+                <li onclick="selecionaSobremesa(this);">
                     <img src="/assets/doce de banana.jpg">
                     <p><strong>Doce de Banana</strong></p>
                     <p class="descricao-pedido">Doce caseiro</p>
