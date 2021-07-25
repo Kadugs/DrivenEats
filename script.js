@@ -3,6 +3,10 @@ let valorPrato = 0;
 let valorBebida = 0;
 let valorSobremesa = 0;
 let valorTotal = 0;
+let nomePrato;
+let nomeBebida;
+let nomeSobremesa;
+let mensagem;
 
 //cria e remove a marcação dos itens
 function adicionaMarca(classeDeSelecao, itemSelecionado) {
@@ -18,23 +22,30 @@ function adicionaMarca(classeDeSelecao, itemSelecionado) {
 }
 
 //pega o valor do item escolhido
-function selecionaValor(produto) {
+function funcaoValor(produto) {
     let valor = produto.querySelector(".valor").innerHTML;
     return Number(valor);
+}
+function funcaoNome(produto) {
+    let nome = produto.querySelector("strong").innerHTML;
+    return nome;
 }
 
 //funções disparadas ao clicar
 function selecionaPrato(itemSelecionado) {
     adicionaMarca('prato-selecionado', itemSelecionado);
-    valorPrato = selecionaValor(itemSelecionado);
+    valorPrato = funcaoValor(itemSelecionado);
+    nomePrato = funcaoNome(itemSelecionado);
 }
 function selecionaBebida(itemSelecionado) {
     adicionaMarca('bebida-selecionada', itemSelecionado); 
-    valorBebida = selecionaValor(itemSelecionado);
+    valorBebida = funcaoValor(itemSelecionado);
+    nomeBebida = funcaoNome(itemSelecionado);
 }
 function selecionaSobremesa(itemSelecionado) {
     adicionaMarca('sobremesa-selecionada', itemSelecionado);
-    valorSobremesa = selecionaValor(itemSelecionado);
+    valorSobremesa = funcaoValor(itemSelecionado);
+    nomeSobremesa = funcaoNome(itemSelecionado);
 }
 
 //verifica se todos os itens foram esconlhidos para liberar a confirmação
@@ -56,7 +67,22 @@ function confirmarPedido() {
     valorTotal = valorPrato + valorBebida + valorSobremesa;
     const botao = document.querySelector(".botao-confirmar");
     if(botao.classList.contains("liberar-confirmacao")) {
-        const mensagem = encodeURIComponent( `Olá, gostaria de fazer o pedido: \n - Prato: moqueca \n - Bebida: suco de laranja \n - Sobremesa: doce de banana \n Valor: R$ ${valorTotal.toFixed(2)}`);
+        nomeUsuario = prompt("Qual é o seu nome?");
+        enderecoUsuario = prompt("Qual é o seu endereço?");
+        mensagem = encodeURIComponent( `Olá, gostaria de fazer o pedido:
+         - Prato: ${nomePrato}
+         - Bebida: ${nomeBebida}
+         - Sobremesa: ${nomeSobremesa}
+         Total: R$ ${valorTotal.toFixed(2)}
+         
+         Nome: ${nomeUsuario}
+         Endereço: ${enderecoUsuario}`);
+         janelaConfirmacao();
         window.open(`https://wa.me/5533988418125?text=${mensagem}`);
     }
+}
+
+
+function janelaConfirmacao() {
+    
 }
