@@ -77,12 +77,30 @@ function confirmarPedido() {
          
          Nome: ${nomeUsuario}
          Endereço: ${enderecoUsuario}`);
-         janelaConfirmacao();
-        window.open(`https://wa.me/5533988418125?text=${mensagem}`);
+        janelaConfirmacao();
     }
 }
 
 
+const telaConfirma = document.querySelector(".tela-de-confirmacao");
+
 function janelaConfirmacao() {
-    
+    completaTela('prato', nomePrato, valorPrato);
+    completaTela('bebida', nomeBebida, valorBebida);
+    completaTela('sobremesa', nomeSobremesa, valorSobremesa);
+    document.querySelector(`.confirma-total`).children[1].innerHTML = `R$ ${valorTotal.toFixed(2)}`;
+    telaConfirma.style.display = "flex";
+}
+
+//alterar valores da tela de confirmacao 
+function completaTela(nome, pedido, preco) {
+    const selecionaOpcao = document.querySelector(`.confirma-${nome}`);
+    selecionaOpcao.children[0].innerHTML = pedido;
+    selecionaOpcao.children[1].innerHTML = preco.toFixed(2);
+}
+function enviaWhats() {
+    window.open(`https://wa.me/5533988418125?text=${mensagem}`);
+}
+function cancelaPedido() {
+    telaConfirma.style.display = "none";
 }
